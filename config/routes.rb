@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   get 'welcome/home'
   get 'welcome/app', to: 'welcome#app', as: 'app'
   root 'welcome#home'
