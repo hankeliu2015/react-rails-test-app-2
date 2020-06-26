@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'welcome/home'
   get 'welcome/app', to: 'welcome#app', as: 'app'
   root 'welcome#home'
